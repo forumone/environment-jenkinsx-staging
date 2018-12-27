@@ -38,3 +38,29 @@ pipelinesecrets:
   dockerconfig: ""
 controllerbuild:
   enabled: null
+exposecontroller:
+  config:
+    domain: 35.203.48.223.nip.io
+    exposer: Ingress
+    http: "true"
+    tlsacme: ""
+    pathmode: ""
+  annotations:
+    helm.sh/hook: post-install,post-upgrade
+    helm.sh/hook-delete-policy: hook-succeeded
+jenkins:
+  servers:
+    gitea: []
+    ghe: []
+    global:
+      envvars:
+        TILLER_NAMESPACE: kube-system
+  enabled: null
+prow:
+  user: ""
+  hmactoken: ""
+  oauthtoken: ""
+pipelinesecrets:
+  dockerconfig: ""
+controllerbuild:
+  enabled: null
